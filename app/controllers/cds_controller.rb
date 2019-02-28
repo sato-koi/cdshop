@@ -23,6 +23,6 @@ class CdsController < ApplicationController
   private
 
   def cd_params
-    params.reqire(:cd).permit(:title, :artist, :price, :release_date, :description)
+    params.require(:cd).permit(:title, :artist, :price, :release_date, :description)
   end
 end
