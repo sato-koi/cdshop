@@ -1,0 +1,10 @@
+ja:
+  cds:
+    new:
+      title: CD登録
+    show:
+      artist: アーティスト
+      price: 価格
+      price_yen: "¥%{price}"
+      release_date: 発売日
+      description: 商品の説明

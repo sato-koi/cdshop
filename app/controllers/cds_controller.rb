@@ -4,7 +4,7 @@ class CdsController < ApplicationController
   end
 
   def new
-    @cds = Cd.new
+    @cd = Cd.new
   end
 
   def create
