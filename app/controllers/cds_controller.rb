@@ -20,6 +20,20 @@ class CdsController < ApplicationController
     @cd = Cd.find(params[:id])
   end
 
+  def edit
+    @cd = Cd.find(params[:id])
+  end 
+
+  def update
+    @cd = Cd.find(params[:id])
+    if @cd.update(cd_params)
+      redirect_to @cd, notice: "CD情報を更新しました。"
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def cd_params

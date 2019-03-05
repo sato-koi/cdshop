@@ -2,6 +2,8 @@ ja:
   cds:
     new:
       title: CD登録
+    edit:
+      title: CD更新
     show:
       artist: アーティスト
       price: 価格
