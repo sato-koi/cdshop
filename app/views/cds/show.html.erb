@@ -1,11 +1,21 @@
 <div class="col-md-10 offset-md-1 mt-5">
-  <h2><%= @cd.title %></h2>
-  <ul>
-    <li><b><%= t ".artist" %>: </b><%= @cd.artist %></li>
-    <li><b><%= t ".price" %>: </b><%= t(".price_yen", price: (number_with_delimiter @cd.price)) %></li>
-    <li><b><%= t ".publish_date" %>: </b><%= @cd.release_date %></li>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+    <%= show_cd_image @cd %>
+    </div>
+    <div class="col-md-8">
+      <h2><%= @cd.title %></h2>
+      <ul>
+        <li><b><%= t ".artist" %>: </b><%= @cd.artist %></li>
+        <li><b><%= t ".price" %>: </b><%= t(".price_yen", price: (number_with_delimiter @cd.price)) %></li>
+        <li><b><%= t ".release_date" %>: </b><%= @cd.release_date %></li>
+      </ul>
+    </div>
+  </div>
   </ul>
   <hr>
   <h4><%= t ".description" %></h4>
   <%= simple_format @cd.description %>
+  <%= link_to t(".edit"), edit_cd_path(@cd), class: "btn btn-primary" %>
+  <%= link_to t(".return"), cds_path, class: "btn btn-secondary" %>
 </div>
