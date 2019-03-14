@@ -3,6 +3,7 @@ ja:
   activerecord:
     models:
       cd: CD情報
+      artist: アーティスト情報
     attributes:
       cd:
         title: タイトル
@@ -12,6 +13,12 @@ ja:
         description: 詳細
         new_image: 画像
         image: 画像
+      artist:
+        name: アーティスト名
+        url: URL
+        description: 詳細
+        new_image: 画像
+        image: 画像        
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

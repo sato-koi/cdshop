@@ -1,27 +1,25 @@
 <div class="col-md-10 offset-md-1 mt-5">
   <div class="row">
     <div class="col-md-4 mb-4">
-    <%= show_cd_image @cd %>
+    <%= show_artist_image @artist %>
     </div>
     <div class="col-md-8">
-      <h2><%= @cd.title %></h2>
+      <h2><%= @artist.name %></h2>
       <ul>
-        <li><b><%= t ".artist" %>: </b><%= @cd.artist %></li>
-        <li><b><%= t ".price" %>: </b><%= t(".price_yen", price: (number_with_delimiter @cd.price)) %></li>
-        <li><b><%= t ".release_date" %>: </b><%= @cd.release_date %></li>
+        <li><b><%= t ".url" %>: </b><%= @artist.url %></li>
       </ul>
     </div>
   </div>
   </ul>
   <hr>
   <h4><%= t ".description" %></h4>
-  <%= simple_format @cd.description %>
-  <%= link_to t(".edit"), edit_cd_path(@cd), class: "btn btn-primary" %>
-  <%= button_tag t(".delete"), class: "btn btn-warning", data: { toggle: "modal", target: "#delete-cd" } %>
-  <%= link_to t(".return"), cds_path, class: "btn btn-secondary" %>
+  <%= simple_format @artist.description %>
+  <%= link_to t(".edit"), edit_artist_path(@artist), class: "btn btn-primary" %>
+  <%= button_tag t(".delete"), class: "btn btn-warning", data: { toggle: "modal", target: "#delete-artist" } %>
+  <%= link_to t(".return"), artists_path, class: "btn btn-secondary" %>
 </div>
 
-<div class="modal fade" id="delete-cd">
+<div class="modal fade" id="delete-artist">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -31,11 +29,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <p><%= t(".question_cd", cd: @cd.title) %></p>
+        <p><%= t(".question_artist", artist: @artist.name) %></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".chancel") %></button>
-        <%= link_to t(".delete_action"), cd_path(@cd), method: :delete, class: "btn btn-danger" %>
+        <%= link_to t(".delete_action"), artist_path(@artist), method: :delete, class: "btn btn-danger" %>
       </div>
     </div>
   </div>

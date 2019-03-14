@@ -33,6 +33,12 @@ class CdsController < ApplicationController
     end
   end
 
+  def destroy
+    @cd = Cd.find(params[:id])
+    @cd.destroy
+    redirect_to cds_path, notice: "CDを削除しました。"
+  end
+
 
   private
 

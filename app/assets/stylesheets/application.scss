@@ -12,3 +12,15 @@
  *
  */
 @import "bootstrap";
+
+.bg-black {
+  background-color: #252F3D !important;
+}
+
+.bg-black .navbar-brand {
+  color: rgb(247, 9, 9);
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color: rgb(247, 9, 9);
+}

@@ -1,4 +1,5 @@
 class Cd < ApplicationRecord
+  belongs_to :artist
   has_one_attached :image
   attribute :new_image
   validates :title, presence: true, length: { maximum: 50 }
