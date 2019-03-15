@@ -19,7 +19,13 @@ ja:
         url: URL
         description: 詳細
         new_image: 画像
-        image: 画像        
+        image: 画像  
+      user:
+        email: メールアドレス
+        nick_name: ニックネーム
+        avatar: プロフィール画像
+        password: パスワード
+        password_confirmation: パスワード再入力
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
