@@ -1,6 +1,6 @@
 class CdsController < ApplicationController
   def index
-    @cds = Cd.all
+    @cds = Cd.page(params[:page]).per(4)
   end
 
   def new
