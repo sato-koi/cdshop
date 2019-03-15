@@ -13,6 +13,7 @@ ja:
         description: 詳細
         new_image: 画像
         image: 画像
+        artist_id: アーティスト
       artist:
         name: アーティスト名
         url: URL

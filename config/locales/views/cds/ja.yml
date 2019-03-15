@@ -4,6 +4,8 @@ ja:
       title: CD登録
     edit:
       title: CD更新
+    form:
+      include_blank: カテゴリーを選択して下さい
     show:
       artist: アーティスト
       price: 価格

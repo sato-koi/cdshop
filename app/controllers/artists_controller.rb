@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-    def new
+  def new
     @artist = Artist.new
   end
 

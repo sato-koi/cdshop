@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 2019_03_05_063349) do
 
   create_table "cds", force: :cascade do |t|
     t.string "title", null: false
-    t.string "artist", null: false
     t.integer "price", null: false
     t.date "release_date", null: false
     t.text "description", null: false

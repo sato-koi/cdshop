@@ -6,7 +6,7 @@
     <div class="col-md-8">
       <h2><%= @cd.title %></h2>
       <ul>
-        <li><b><%= t ".artist" %>: </b><%= @cd.artist %></li>
+        <li><b><%= t ".artist" %>: </b><%= link_to @cd.artist.name, artist_path(@cd.artist) %></li>
         <li><b><%= t ".price" %>: </b><%= t(".price_yen", price: (number_with_delimiter @cd.price)) %></li>
         <li><b><%= t ".release_date" %>: </b><%= @cd.release_date %></li>
       </ul>
