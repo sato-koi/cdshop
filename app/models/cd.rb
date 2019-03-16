@@ -1,6 +1,7 @@
 class Cd < ApplicationRecord
   belongs_to :artist
   has_many :reviews, dependent: :destroy
+  has_many :users, through: :reviews
   has_one_attached :image
   attribute :new_image
   validates :title, presence: true, length: { maximum: 50 }

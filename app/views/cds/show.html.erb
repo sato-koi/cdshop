@@ -22,6 +22,8 @@
     <%= link_to t(".review_new"), new_cd_cd_review_path(@cd), class: "btn btn-info" %>
   <% end %>
   <%= link_to t(".return"), cds_path, class: "btn btn-secondary" %>
+  <hr>
+  <%= render partial: "cd_reviews/cd_review", collection: @cd.cd_reviews %>
 </div>
 
 <div class="modal fade" id="delete-cd">

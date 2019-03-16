@@ -1,6 +1,7 @@
 class CdsController < ApplicationController
+  before_action :set_cd, only: [:edit, :update, :destroy]
   def index
-    @cds = Cd.page(params[:page]).per(4)
+    @cds = Cd.with_attached_image.page(params[:page]).per(4)
   end
 
   def new
@@ -17,15 +18,13 @@ class CdsController < ApplicationController
   end
 
   def show
-    @cd = Cd.find(params[:id])
+    @cd = Cd.with_attached_image.includes(reviews: :user).find(params[:id])
   end
 
   def edit
-    @cd = Cd.find(params[:id])
   end 
 
   def update
-    @cd = Cd.find(params[:id])
     if @cd.update(cd_params)
       redirect_to @cd, notice: "CD情報を更新しました。"
     else
@@ -34,7 +33,6 @@ class CdsController < ApplicationController
   end
 
   def destroy
-    @cd = Cd.find(params[:id])
     @cd.destroy
     redirect_to cds_path, notice: "CDを削除しました。"
   end
@@ -45,4 +43,9 @@ class CdsController < ApplicationController
   def cd_params
     params.require(:cd).permit(:title, :artist_id, :price, :release_date, :description, :new_image)
   end
+  
+  def set_cd
+    @cd = Cd.find(params[:id])
+  end
+
 end

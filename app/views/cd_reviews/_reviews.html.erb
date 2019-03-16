@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <% if cd_review.user.avatar.attached? %>
+      <%= image_tag cd_review.user.avatar.variant(resize: "60x60"), class: "img-thumbnail" %>
+    <% else %>
+      <%= image_tag "no_image.png", class: "img-thumbnail", width: 60 %>
+    <% end %>
+    <span><%= cd_review.user.nick_name %></span>
+  </div>
+  <div>
+    <div>
+      <span class="text-warning"><%= "★" * cd_review.evaluation %></span>
+      <b><%= link_to cd_review.title, cd_cd_review_path(cd_review.cd, cd_review) %></b>
+    </div>
+    <small><%= cd_review.created_at.strftime("%Y年%m月%d日") %></small>
+  </div>
+  <%= simple_format cd_review.body %>
+</div>

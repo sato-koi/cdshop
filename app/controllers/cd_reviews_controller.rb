@@ -1,11 +1,13 @@
 class CdReviewsController < ApplicationController
-  before_action :set_cd, only: :new
+  before_action :set_cd, only: [:show, :new]
+  efore_action :set_cd_review, only: :show
+
   def new
-    @cd_review = Cd_review.new
+    @cd_review = CdReview.new
   end
   
   def create
-    @cd_review = Cd_review.new(cd_review_params)
+    @cd_review = CdReview.new(cd_review_params)
     @cd_review.attributes = {
       cd_id: params[:cd_id],
       user_id: current_user.id
@@ -16,14 +18,20 @@ class CdReviewsController < ApplicationController
       render :new
     end
   end
+
+  def show
+  end
   
   private  
   
-  def review_params
+  def cd_review_params
     params.require(:cd_review).permit(:title, :body, :evaluation)
   end
 
   def set_cd
     @cd = Cd.find(params[:cd_id])
+  end
+  def set_cd_review
+    @cd_review = CdReview.find(params[:id])
   end
 end

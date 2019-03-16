@@ -32,8 +32,8 @@ ja:
         title: タイトル
         body: 本文
         evaluation: 評価
-        cd_id: 書籍
-        cd: 書籍
+        cd_id: CD
+        cd: CD
         user_id: ユーザー
         user: ユーザー
     errors:
