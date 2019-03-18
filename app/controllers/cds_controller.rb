@@ -18,7 +18,7 @@ class CdsController < ApplicationController
   end
 
   def show
-    @cd = Cd.with_attached_image.includes(reviews: :user).find(params[:id])
+    @cd = Cd.with_attached_image.includes(cd_reviews: :user).find(params[:id])
   end
 
   def edit
