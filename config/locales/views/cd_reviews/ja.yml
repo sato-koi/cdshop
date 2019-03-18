@@ -2,7 +2,14 @@ ja:
   cd_reviews:
     new:
       title: レビュー登録
+    edit:
+      title: レビュー更新
     show:
       title: カスタマーレビュー
       edit: 編集
       back: 戻る
+      delete: 削除
+      modal_title: レビュー削除
+      question_cd_review: "%{cd_review}を削除しますか？"
+      delete_action: 削除する
+      chancel: キャンセル

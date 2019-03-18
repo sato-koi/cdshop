@@ -1,6 +1,6 @@
 class CdReviewsController < ApplicationController
-  before_action :set_cd, only: [:show, :new]
-  efore_action :set_cd_review, only: :show
+  before_action :set_cd, only: [:show, :new, :edit]
+  before_action :set_cd_review, only: [:show, :edit, :update, :destroy]
 
   def new
     @cd_review = CdReview.new
@@ -20,6 +20,22 @@ class CdReviewsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @cd_review.update(cd_review_params)
+      redirect_to @cd_review.cd, notice: "レビューを更新しました。"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @cd_review.destroy
+    redirect_to @cd_review.cd, notice: "レビューを削除しました。"
   end
   
   private  

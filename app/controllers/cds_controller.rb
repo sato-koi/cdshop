@@ -1,7 +1,6 @@
 class CdsController < ApplicationController
-  before_action :set_cd, only: [:edit, :update, :destroy]
+  before_action :set_cd, only: [:show, :edit, :update, :destroy]
   def index
-    @cds = Cd.with_attached_image.page(params[:page]).per(4)
   end
 
   def new
@@ -18,7 +17,6 @@ class CdsController < ApplicationController
   end
 
   def show
-    @cd = Cd.with_attached_image.includes(cd_reviews: :user).find(params[:id])
   end
 
   def edit
